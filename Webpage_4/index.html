@@ -1,0 +1,31 @@
+<!-- Audio in HTML -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio in HTML</title>
+</head>
+
+<body>
+    <p>Catch Me If I Fall</p>
+    <audio controls autoplay muted loop>
+        <source src="Audios/Catch Me If I Fall.mp3" type="audio/mp3" />
+        <source src="Audios/Catch Me If I Fall.wav" type="audio/wav" />
+        <!-- Fallback of audio link in case if browser doesn't support mp3 format it will play wav format -->
+    </audio>
+    <p>Dreaming On</p>
+    <audio controls>
+        <source src="Audios/Dreaming On.mp3" type="audio/mp3" />
+        <source src="Audios/Dreaming On.wav" type="audio/wav" />
+    </audio>
+    <p>Losing My Mind</p>
+    <audio controls>
+        <source src="Audios/Losing My Mind.mp3" type="audio/mp3" />
+        <source src="Audios/Losing My Mind.mp3" type="audio/wav" />
+    </audio>
+</body>
+
+</html>
