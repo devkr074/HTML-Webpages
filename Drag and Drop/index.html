@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function dragstartHandler(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function dragoverHandler(ev) {
+            ev.preventDefault();
+        }
+        function dropHandler(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+    <h1 id="h1" draggable="true" ondragstart="dragstartHandler(event)">W3Schools.com</h1>
+    <a id="link1" href="https://w3schools.com" draggable="true" ondragstart="dragstartHandler(event)">W3Schools.com</a>
+    <img id="img1" src="img_logo.gif" draggable="true" ondragstart="dragstartHandler(event)" width="336" height="69">
+    <p id="p1" draggable="true">Draggable text</p>
+</body>
+
+</html>
