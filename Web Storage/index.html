@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        const x = document.getElementById("result");
+        if (typeof (Storage) !== "undefined") {
+            localStorage.setItem("lastname", "Smith");
+            localStorage.setItem("bgcolor", "yellow");
+            x.innerHTML = localStorage.getItem("lastname");
+            x.style.backgroundColor = localStorage.getItem("bgcolor");
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            x.innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s)!";
+        } else {
+            x.innerHTML = "Sorry, no Web storage support!";
+        }
+        function clickCounter() {
+            const x = document.getElementById("result");
+            if (typeof (Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                x.innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session!";
+            } else {
+                x.innerHTML = "Sorry, no Web storage support!";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="result"></div>
+    <button onclick="clickCounter()">Click me</button>
+</body>
+
+</html>
